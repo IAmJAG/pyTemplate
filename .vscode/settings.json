@@ -1,0 +1,79 @@
+{
+"files.exclude": {
+        "**/__pycache__": false,
+        "**/.mypy_cache": false,
+        "**/*.egg-info": false,
+        "**/setup.py": false,
+        "**/.stubs": false,
+        "**/logs": true,
+        "**/_tests": true,
+        "**/.ruff_cache": true,
+        "readme.md": false,
+        "requirements.txt": true,
+        ".env": false,
+        ".gitignore": false,
+    },        
+    "terminal.integrated.env.windows": {
+        "PYTHONPATH": "${workspaceFolder}\\src\\_modules;${workspaceFolder}\\hook"
+    },
+
+    "[python]": {
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.formatOnSave": false,
+        "editor.formatOnType": true,
+        "editor.formatOnPaste": true,
+        "editor.rulers": [
+            180
+        ],
+        "editor.codeActionsOnSave": {
+            "source.fixAll.ruff": "always",
+            "source.organizeImports": "always",
+        },
+    },
+    "python.analysis.stubPath": "./typings",
+    "python.analysis.useLibraryCodeForTypes": true,
+    "python.analysis.extraPaths": [
+        "./src/_modules",
+    ], // for intellisense
+
+    "python.languageServer": "Pylance",
+    
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportRedeclaration": "none",
+        "reportAssignmentType": "none",
+        "reportAttributeAccessIssue": "none",
+        "reportOptionalCall": "none",
+        "reportReturnType": "none",
+        "reportInvalidTypeVarUse": "none",
+        "reportOptionalMemberAccess": "none",
+        "reportCallIssue": "none",
+        "reportArgumentType": "none",
+        "reportOptionalSubscript": "none",
+        "reportWildcardImportFromLibrary": "none",
+        "typeCheckingMode": "off",
+        "reportMissingModuleSource": "none",
+        "reportInvalidTypeForm":"none"
+    },
+
+    "ruff.enable": true,
+    "ruff.organizeImports": true,
+    // "ruff.lineLength": 180, // disabled in lint.ignore
+    "ruff.lint.ignore": [
+        "F403", // unable to detect undefined names
+        "F405", // may be undefined, or defined from star imports
+        "F401", // imported but unused; consider removing, adding to `__all__`, or using a redundant alias
+        "E501", // Standard "Line length" violation
+        "F811", // redefined-while-unused
+        "F821", // undefined-name"
+        "F841", // Variable not accessed       
+        "E701", // multiple-statements-on-one-line-colon
+        "E712", // true-false-comparison
+    ],
+
+    "flake8.enabled": false,
+
+    "workbench.colorTheme": "Default Dark+",
+    "workbench.externalBrowser": "chrome",
+    "python.defaultInterpreterPath": "..\\venv\\.eNuts",
+
+}

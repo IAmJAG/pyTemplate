@@ -3,7 +3,8 @@ from sys import argv
 
 
 def _programs(clean: bool = False, *args, **kwargs) -> None:
-    print(getenv("PYTHONPATH"), argv)
+    print(getenv("PYTHONPATH"))
+    print(argv)
     print(F"Printing Empty {EMPTY}" )
 
     if clean:

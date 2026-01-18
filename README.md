@@ -1,1 +1,1 @@
-# template
+# Python Project Template
